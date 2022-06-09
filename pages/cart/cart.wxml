@@ -1,0 +1,31 @@
+<view class="carts">
+  <!-- 列表 -->
+  <block wx:for='{{ carts }}' wx:key='_id'>
+    <view class='goods'>
+      <view class="goods-l">
+        <image mode="aspectFill" lazy-load src="{{ item.imageSrc }}"></image>
+      </view>
+      <view class="goods-r">
+        <view class="goods-r-t">
+          <view>{{ item.title }}</view>
+          <view class="price">x {{ item.num }}</view>
+        </view>
+        <view class="goods-r-b">
+          <view>
+            <!-- <block wx:for='{{ item.tags }}' wx:key='*this' wx:for-item='it'>
+              <text>{{ it }}</text>
+            </block> -->
+            <view class="price">¥ {{ item.price }}</view>
+          </view>
+          <view catchtap="subCount" data-id="{{ item._id }}" class="order">-</view>
+          <view catchtap="addCount" data-id="{{ item._id }}" class="order">+</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="tool">
+  <view class="tool-l">总价格 : ¥ {{ totalPrice }}</view>
+  <view bindtap="startpay" class="tool-r">支付 : ({{ totalCount }})</view>
+</view>

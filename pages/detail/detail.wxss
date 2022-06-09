@@ -1,0 +1,25 @@
+
+view {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  /* padding-left: 20px; */
+}
+
+image {
+  width: 100%;
+}
+
+.order {
+  background: red;
+  color: #fff;
+  width: 35px;
+  padding: 3px 10px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  
+}
+

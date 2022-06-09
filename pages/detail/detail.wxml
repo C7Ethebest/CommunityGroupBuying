@@ -1,0 +1,8 @@
+<image src="{{ detail.imageSrc }}"></image>
+<view style="padding-left: 20px;">标题 : {{ detail.title }}</view>
+<view style="padding-left: 20px;">价格 : {{ detail.price }}</view>
+<view style="padding-left: 20px;">计划天数 : {{ detail.count }}</view>
+<view style="padding-left: 20px;">计划详情 : {{ detail.plan }}</view>
+
+
+<view catchtap="addCart" data-item='{{ item }}' class="order">下单</view>

@@ -1,0 +1,29 @@
+<!-- tab -->
+<view class="tabs">
+  <block wx:for='{{ tabs }}' wx:key='id'>
+    <view bindtap="clicktab" class="tab {{ item.id === activeIndex ? 'active' :'' }}" data-id='{{ item.id }}'>{{ item.title }}</view>
+  </block>
+</view>
+
+<!-- 列表 -->
+<!-- 全部 -->
+<block wx:if='{{ tabs[0].isActive }}'>
+  <view class="item" wx:for='{{ orders_all }}' wx:key='_id'>
+    <text class="item-title">订单号:</text>
+    <text class="item-number">{{ item.order_number }}</text> 
+  </view>
+</block>
+<!-- 支付成功 -->
+<block wx:if='{{ tabs[1].isActive }}'>
+  <view class="item"  wx:for='{{ orders_1 }}' wx:key='_id'>
+    <text class="item-title">订单号:</text>
+    <text class="item-number">{{ item.order_number }}</text> 
+  </view>
+</block>
+<!-- 支付失败 -->
+<block wx:if='{{ tabs[2].isActive }}'>
+  <view class="item"  wx:for='{{ orders_0 }}' wx:key='_id'>
+    <text class="item-title">订单号:</text>
+    <text class="item-number">{{ item.order_number }}</text> 
+  </view>
+</block>

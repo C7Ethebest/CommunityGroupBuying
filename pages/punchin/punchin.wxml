@@ -1,0 +1,11 @@
+<!--pages/punchin/punchin.wxml-->
+<view>
+  <van-uploader 
+  file-list="{{ fileList }}" 
+  use-before-read
+  bind:before-read="beforeRead"
+	bind:after-read="afterRead" 
+	bind:delete="deleteImg"
+  deletable="{{ true }}"/>
+</view>
+

@@ -1,0 +1,31 @@
+<swiper indicator-dots="{{ true }}" autoplay="{{true}}" interval="{{ 2000 }}" duration="{{1000}}" circular="{{ true }}">
+  <block wx:for="{{ swipers }}" wx:key="_id">
+    <swiper-item>
+      <image src="{{ item.imageSrc }}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 列表 -->
+<block wx:for='{{ goods }}' wx:key='_id'>
+  <navigator hover-class='hcls' class='goods' url="/pages/detail/detail?id={{item._id}}">
+    <view class="goods-l">
+      <image mode="aspectFill" lazy-load src="{{ item.imageSrc }}"></image>
+    </view>
+    <view class="goods-r">
+      <view class="goods-r-t">
+        <view>{{ item.title }}</view>
+        <view class="price">¥ {{ item.price }}</view>
+      </view>
+      <view class="goods-r-m">计划天数: {{ item.count }}</view>
+      <view class="goods-r-b">
+        <view>
+          <block wx:for='{{ item.tags }}' wx:key='*this' wx:for-item='it'>
+            <text>{{ it }}</text>
+          </block>
+        </view>
+        <view catchtap="addCart" data-item='{{ item }}' class="order">下单</view>
+      </view>
+    </view>
+  </navigator>
+</block>

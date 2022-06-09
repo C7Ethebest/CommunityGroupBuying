@@ -1,0 +1,114 @@
+/* pages/cart/cart.wxss */
+.carts {
+  margin-bottom: 100rpx;
+}
+
+.goods {
+  display: flex;
+  height: 200rpx;
+  border-bottom: 1px solid #ccc;
+  padding: 20rpx;
+}
+
+.hcls {
+  background: #fff;
+}
+
+.goods-l {
+  flex: 1;
+  /* background: pink; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goods-l image {
+  width: 90%;
+  height: 90%;
+}
+
+.goods-r {
+  padding: 10px 15px;
+  flex: 2;
+  /* background: yellowgreen; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goods-r-t {
+  /* background: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  color: red;
+}
+
+.goods-r-m {
+  /* background: blue; */
+  color: #999;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.goods-r-b {
+  /* background: blue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.goods-r-b text {
+  background: rgba(154, 205, 50, 0.3);
+  margin-right: 5px;
+}
+
+.goods-r-b text:nth-child(2) {
+  background: rgba(69, 243, 121, 0.3);
+  margin-right: 5px;
+}
+
+.goods-r-b text:nth-child(3) {
+  background: rgba(85, 10, 224, 0.3);
+  margin-right: 5px;
+}
+
+.order {
+  width: 10px;
+  background: red;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.tool {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  border-top: 1px solid red;
+  display: flex;
+}
+
+.tool-l {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: orange;
+  font-weight: 700
+}
+
+.tool-r {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(5, 158, 5);
+  font-weight: 700;
+  color: rgb(185, 15, 15);
+}

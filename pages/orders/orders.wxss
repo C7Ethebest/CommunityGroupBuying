@@ -1,0 +1,43 @@
+.tabs {
+  height: 80rpx;
+  background: pink;
+  display: flex;
+}
+
+.tab {
+  flex: 1;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 4px solid #f4f4f4;
+  color: #333;
+}
+
+.tab.active {
+  color: red;
+  border-bottom: 4px solid red;
+}
+
+.item {
+  height: 100rpx;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  /* align-items: center;
+  padding-left: 20px; */
+}
+
+.item .item-title {
+  flex: 1;
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item .item-number {
+  flex: 2;
+  /* background: blue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

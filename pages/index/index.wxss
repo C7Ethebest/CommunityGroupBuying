@@ -1,0 +1,92 @@
+swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+swiper image{
+  width: 750rpx;
+  height: 340rpx;
+}
+
+.goods {
+  display: flex;
+  height: 200rpx;
+  border-bottom: 1px solid #ccc;
+  padding: 20rpx;
+}
+
+.hcls {
+  background: #fff
+}
+
+.goods-l {
+  flex: 1;
+  /* background: pink; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goods-l image {
+  width: 90%;
+  height: 90%;
+}
+
+.goods-r {
+  padding: 10px 15px;
+  flex: 2;
+  /* background: yellowgreen; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goods-r-t {
+
+  /* background: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  color: red;
+}
+
+.goods-r-m {
+  /* background: blue; */
+  color: #999;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.goods-r-b {
+ 
+  /* background: blue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+
+.goods-r-b text {
+  background: rgba(154, 205, 50, .3);
+  margin-right: 5px;
+}
+.goods-r-b text:nth-child(2) {
+  background: rgba(69, 243, 121, 0.3);
+  margin-right: 5px;
+}
+.goods-r-b text:nth-child(3) {
+  background: rgba(85, 10, 224, 0.3);
+  margin-right: 5px;
+}
+
+
+.order {
+  background: red;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 2px;
+}

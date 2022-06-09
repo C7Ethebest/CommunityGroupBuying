@@ -1,0 +1,25 @@
+<!--pages/my/my.wxml-->
+<view >
+  <van-image
+  class="touxiang"  round
+  fit="cover" width="5rem"  height="5rem"
+  src="{{userInfo.avatarUrl}}"
+  bind:click="login"
+  />
+</view>
+<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+
+
+<view class="caidan">
+  <van-cell title="我的订单" is-link/>
+  <van-cell title="我的打卡" is-link 
+  link-type="navigateTo"
+  url="/pages/punchin/punchin"/>
+  <van-cell title="我的得分与评价" is-link 
+  link-type="navigateTo"
+  url="/pages/comment/comment"/>
+  <van-cell title="退出登陆" is-link bind:click="loginOut"/>
+</view>
+
+
+

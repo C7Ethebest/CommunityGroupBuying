@@ -1,0 +1,18 @@
+/* pages/my/my.wxss */
+.touxiang{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userinfo-nickname{
+  text-shadow: 10;
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caidan{
+  margin-top: 50px;
+}

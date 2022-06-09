@@ -1,0 +1,10 @@
+<!--pages/comment/comment.wxml-->
+<van-rate
+  allow-half
+  value="{{ value }}"
+  size="{{ 25 }}"
+  color="#ffd21e"
+  void-icon="star"
+  void-color="#eee"
+  bind:change="onChange"
+/>
