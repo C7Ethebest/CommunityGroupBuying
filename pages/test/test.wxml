@@ -1,0 +1,16 @@
+<!-- <van-swipe-cell right-width="{{ 65 }}"  wx:for="{{carts}}" class="carts-container" wx:key="index">
+  <view class="cartsbox">
+  <van-checkbox value="{{ item.checked }}" wx:key="_id" data-index="{{ index }}" bind:change="onCheckboxChange"></van-checkbox>
+    <van-card 
+    num="{{item.num}}" 
+    price="{{item.price}}" 
+    title="{{item.title}}" thumb="{{item.imageSrc}}">
+    </van-card>
+    
+  </view>
+  <view slot="right">删除</view>
+</van-swipe-cell>
+<van-submit-bar price="{{ 3050 }}" button-text="提交订单" bind:submit="onSubmit" /> -->
+
+
+

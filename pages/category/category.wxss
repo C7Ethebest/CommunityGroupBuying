@@ -1,0 +1,89 @@
+/* pages/category/category.wxss */
+
+.category-header{
+ padding-left: 3px;
+ padding-right: 3px;
+}
+
+.category-main{
+  display: flex;
+}
+
+view .van-sidebar-item{
+  padding: 15px 12px 15px 8px;
+}
+
+.main-right{
+  width: 100%;
+}
+
+.goods {
+  display: flex;
+  height: 190rpx;
+  border-bottom: 1px solid #ccc;
+  padding: 10rpx 15rpx 10rpx 5rpx;
+}
+.goods-l {
+  width: 80px;
+  height: 80px;
+  /* background: pink; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goods-l image {
+  width: 95%;
+  height: 95%;
+}
+
+.goods-r {
+  padding: 5px 3px;
+  flex: 2;
+  /* background: yellowgreen; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goods-r-t {
+  /* background: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: red;
+}
+
+.goods-r-m {
+  /* background: blue; */
+  color: #999;
+  font-size: 13px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.goods-r-b {
+  /* background: blue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+.goods-r-b text {
+  background: rgba(154, 205, 50, .3);
+}
+
+
+.order {
+  background: rgb(255, 0, 0);
+  margin-top: 3px;
+  color: #fff;
+  padding: 5px 5px;
+  border-radius: 2px;
+}

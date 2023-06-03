@@ -1,8 +1,85 @@
-<image src="{{ detail.imageSrc }}"></image>
-<view style="padding-left: 20px;">标题 : {{ detail.title }}</view>
-<view style="padding-left: 20px;">价格 : {{ detail.price }}</view>
-<view style="padding-left: 20px;">计划天数 : {{ detail.count }}</view>
-<view style="padding-left: 20px;">计划详情 : {{ detail.plan }}</view>
+<view class="good-detail-container">
+  <view class="good-detail-main">
+    <!-- <view class="good-detail-swiper">
+      <swiper class="detail-swiper" indicator-dots="{{ true }}" interval="{{ 6000 }}" duration="{{1000}}">
+        <block wx:for="{{ swipers }}" wx:key="_id">
+          <swiper-item>
+            <view class="detail-swiper">
+              <image src="{{ item.imageSrc }}"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view> -->
+
+    <image src="{{ detail.imageSrc }}"></image>
+
+    <view class="good-detail-info">
+      <view class="good-detail-info-left">
+        <view class="info-left-top">
+          <text style="font-size: 17px;">￥</text>{{ detail.price }}
+        </view>
+        <view class="info-left-bottom">
+          <view class="info-left-bottom-text">{{ detail.title }}</view>
+        </view>
+      </view>
+
+      <view class="good-detail-info-right">
+        <view class="info-right-top">已售{{detail.sold}}件</view>
+        <view class="info-right-bottom" catchtap="onShareAppMessage">
+          <van-icon name="share-o" />
+          <text>分享</text>
+        </view>
+      </view>
+    </view>
+    <view class="good-service">
+      <van-icon name="passed" />
+      <text class="good-service-text">隔日到·闪电退款·缺货退</text>
+    </view>
+    <view class="good-detail-desc">
+      <van-tabs active="{{ active }}" bind:change="onChange">
+        <van-tab title="商品描述">
+          <mp-html content="{{detail.more}}" />
+        </van-tab>
+        <van-tab title="评价">
+          <view class="comment-main">
+            <view class="comment-top">
+              <view class="comment-top-icon">
+                <van-image round fit="cover" width="30px" height="30px" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+              </view>
+              <view class="comment-top-right">
+                <view class="right-l">
+                  <text style="font-size: 13px;">吃瓜群众</text>
+                  <view>
+                    <van-rate color="#ffd21e" size="{{ 15 }}" void-color="#eee" value="{{ 4 }}" />
+                  </view>
+                </view>
+                <view class="right-r">
+                  <text style="font-size: 10px;padding-right: 10px;">2023.5.17</text>
+                </view>
+              </view>
+
+            </view>
+            <view class="comment-middle">
+            很好吃孩子很喜欢下次还买
+            </view>
+          </view>
+
+        </van-tab>
+      </van-tabs>
+    </view>
 
 
-<view catchtap="addCart" data-item='{{ item }}' class="order">下单</view>
+  </view>
+
+  <view class="good-detail-tabar">
+    <van-goods-action>
+      <van-goods-action-icon icon="wap-home-o" text="首页" bindtap="back" />
+      <van-goods-action-icon icon="cart-o" text="购物车" bindtap="gocart" info="{{total}}" />
+      <van-goods-action-button data-id='{{ detail._id }}' text="加入购物车" type="warning" catchtap="addCart" />
+      <van-toast id="van-toast" />
+      <van-goods-action-button text="立即购买" />
+    </van-goods-action>
+  </view>
+
+</view>

@@ -1,0 +1,54 @@
+<view class="thetopbox">
+  <view class="thetopbox-head">
+    
+    <view class="head-l">
+      <view style="padding-left: 10px;">提货人</view>
+      <text style="padding-left: 10px;">{{userInfo.userName}} </text>
+      <text style="padding-left: 10px;">{{userInfo.phoneNumber}}</text>
+    </view>
+    <text class="head-r" bindtap="goAddUserInfo">更换</text>
+  </view>
+  <view class="thetopbox-foot">
+  <view class="foot-left">
+    <view class="foot-left-head">自提点 ：
+    <text>XXX超市</text>
+    </view>
+    <text class="foot-left-foot">河南科技大学乾园地下商业街XXX号1111111111111111111</text>
+  </view>
+  <view class="foot-right">
+    <text  bindtap="goChooseStation">切换></text>
+  </view>
+  </view>
+</view>
+
+<view class="top">
+  <view class="middle">
+    <view class="middle-top">预计明日12：00可自提</view>
+    <block wx:for="{{checkedGoods}}" wx:key="_id">
+      <view class="middle-bottom">
+        <image class="middle-image" src="{{ item.imageSrc }}"></image>
+        <view class="middle-right">
+          <text>{{item.title}}</text>
+          <view class="right-bottom">
+            <text class="price">￥{{item.price}}</text>
+            <text style="font-size: 14px; color: rgb(110, 110, 110);">x{{item.num}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="bottom">
+    <van-cell title="订单备注" is-link value="添加" />
+  </view>
+
+  <view class="read">
+    <van-checkbox value="{{ read }}" icon-size="15px" checked-color="#ff2700" bind:change="onChange">
+      我已认真阅读并同意
+      <text style="color: red;">《用户收货服务协议》</text>
+    </van-checkbox>
+  </view>
+
+</view>
+
+<van-submit-bar price="{{ totalPrice }}" button-text="提交订单" bind:submit="startToPay" />

@@ -1,0 +1,109 @@
+.orders{
+  height: 100%;
+}
+
+.order{
+  padding-left: 25rpx;
+  margin-top: 0rpx;
+  background: #fff;
+  padding-bottom: 5px;
+  border-bottom: 12px solid #f3f3f3;
+}
+
+.product{
+  display: flex;
+  align-items: center;
+  height: 180rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+
+.product .image{
+  padding: 5px;
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.product .info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 430rpx;
+  height: 200rpx;
+  margin-left: 20rpx;
+}
+
+.product .title{
+  font-size: 35rpx;
+  font-weight: bolder;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product .desc{
+  margin-top: 10px;
+  font-size: 25rpx;
+  color: #999;
+}
+
+.product .status{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding-right: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.status .package{
+  font-size: 35rpx;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status .txt{
+  font-size: 25rpx;
+  color: #b4282d;
+}
+
+.order .header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25rpx 0 0;
+  border-bottom: 1rpx solid #f1f1f1;
+  height: 80rpx;
+  font-size: 27rpx;
+  color: #555;
+}
+
+.order .foot{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15rpx 25rpx 0 0;
+  height: 80rpx;
+  font-size: 27rpx;
+  color: #555;
+}
+
+.left{
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.price{
+  color: red;
+}
+
+
+.foot .btns{
+  display: flex;
+  justify-content: flex-end;
+}

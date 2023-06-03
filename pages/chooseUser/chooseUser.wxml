@@ -1,0 +1,24 @@
+<view class="main">
+  <block wx:for="{{ users }}" wx:key="index">
+    <view class="head">
+      <van-checkbox value="{{ item.checked }}" bind:change="onCheckboxChange" data-index="{{ index }}"></van-checkbox>
+      <view class="userInfo">
+        <view class="uerInfo-left">
+          <view class="uerInfo-left-top">
+            <!-- <view wx:if="{{isShow}}" class="status">默认</view> -->
+            <view class="username">{{item.userName}}</view>
+          </view>
+          <view class="phone-number">{{item.phoneNumber}}</view>
+        </view>
+        <view class="uerInfo-right" bindtap="onEdit" data-index="{{ index }}">编辑</view>
+      </view>
+    </view>
+  </block>
+
+
+
+</view>
+
+<view class="foot">
+  <van-button round color="linear-gradient(to right, #FFA500, #FF0000)" bindtap="onAddUser">添加提货人</van-button>
+</view>

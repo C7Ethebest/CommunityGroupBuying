@@ -1,4 +1,5 @@
 // pages/my/my.js
+
 Page({
 
   /**
@@ -12,10 +13,9 @@ Page({
   },
 
   login(e) {
-    // 推荐使用 wx.getUserProfile 获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
-    // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+    // 使用 wx.getUserProfile 获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
     wx.getUserProfile({
-      desc: '必须授权才可以继续使用', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      desc: '用于完善会员资料', // 获取用户个人信息后的用途
       success: (res) => {
         let user = res.userInfo
         //登陆用户信息缓存到本地
@@ -32,9 +32,12 @@ Page({
   },
 
   loginOut(){
+    wx.removeStorageSync('user');   //清空缓存中用户信息  
+    let userInfo = '' //界面用户信息设空
+    //同步到data
     this.setData({
-      userInfo:''
-    })
+      userInfo: ''
+    }) 
   },
 
   reload() {
@@ -54,40 +57,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    //拿出缓存中的用户信息
     let user= wx.getStorageSync('user')
-    console.log('进入小程序的my页面获得缓存',user)
     this.setData({
       userInfo: user
     })
     wx.setStorageSync('user', null)
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
   },
 
   /**
@@ -97,12 +72,6 @@ Page({
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
 
   /**
    * 用户点击右上角分享

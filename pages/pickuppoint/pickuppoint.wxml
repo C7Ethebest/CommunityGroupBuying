@@ -1,0 +1,27 @@
+<van-search value="{{ value }}" shape="round" placeholder="搜索更多地址或自提点" />
+<view class="position">
+  <view class="position-l">
+    <van-icon name="location-o" />
+    <text style="font-size: 13px;">河南科技大学（开元校区）</text>
+  </view>
+  <view class="position-r">
+    <van-icon name="aim" />
+    <text style="font-size: 13px;">使用定位</text>
+  </view>
+</view>
+
+<view class="main">
+  <view class="image">
+    <van-image width="70px" height="70px" fit="cover" src="https://th.bing.com/th/id/OIP.Bn0TY2SftQkwORKRYiAERwHaEo?pid=ImgDet&rs=1" />
+
+  </view>
+  <view class="main-info">
+    <view class="info-left">
+      <text>XXX超市</text>
+      <text style="font-size: 14px;">河南科技大学乾园地下商业街XXX号</text>
+    </view>
+    <view class="info-right">
+      <van-button round size="mini" type="primary">选这个</van-button>
+    </view>
+  </view>
+</view>

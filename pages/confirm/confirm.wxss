@@ -1,0 +1,154 @@
+.thetopbox{
+  padding: 5px;
+  background-color: #f7f7f7;
+}
+
+.thetopbox-head{
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid  #f7f7f7;
+}
+
+.head-l{
+  display: flex;
+  flex-direction: row;
+}
+
+.head-r{
+  float: right;
+  color: gray;
+  padding-right: 17px;
+}
+
+.thetopbox-foot{
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+
+.foot-left{
+  display: flex;
+  flex-direction: column;
+}
+
+.foot-left-head{
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.foot-left-foot{
+  padding-left: 5px;
+  padding-top: 10px;
+  font-size: 35rpx;
+  color: gray;
+}
+
+.foot-right{
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  width: 67px;
+  color: gray;
+}
+
+
+
+.top {
+  width: 100%;
+  height: 500px;
+  background-color: #f7f7f7;
+}
+
+view .van-cell-group {
+  padding-top: 10px;
+  margin: 0 5px 0px 5px;
+}
+
+view .van-cell__label{
+  font-size: 15px;
+  
+}
+
+.middle{
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  margin: 0 5px 0px 5px;
+  padding: 5px;
+}
+
+.middle-top{
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.middle-bottom{
+  display: flex;
+  flex-direction: row;
+  margin-top: 13px;
+  padding-left: 7px;
+}
+
+.middle-image{
+  width: 70px;
+  height: 70px;
+}
+
+.middle-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+.price{
+  font-size: large;
+  padding-bottom: 5px;
+}
+
+.right-bottom{
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.bottom{
+  margin: 1px 5px 0 5px;
+
+}
+
+view .van-checkbox{
+  padding: 5px 5px 5px 10px;
+  font-size: 12px;
+}
+
+.read{
+  padding-bottom: 50px;
+}
+
+
+.pop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px;
+}
+
+.btn {
+  padding-top: 23px;
+}
+
+view .van-button {
+  width: 290px;
+}

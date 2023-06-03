@@ -1,15 +1,61 @@
-<swiper indicator-dots="{{ true }}" autoplay="{{true}}" interval="{{ 2000 }}" duration="{{1000}}" circular="{{ true }}">
+<view>
+  <!--搜索栏-->
+  <van-search value="{{ value }}" shape="round" use-action-slot placeholder="请输入搜索关键词" bind:search="onSearch" bind:change="onChange">
+    <view value="{{ value }}" slot="action" bind:tap="onSearch">搜索<slot></slot>
+    </view>
+  </van-search>
+</view>
+
+<!--轮播图-->
+<swiper indicator-dots="{{ true }}" autoplay="{{true}}" interval="{{ 5000 }}" duration="{{1000}}">
   <block wx:for="{{ swipers }}" wx:key="_id">
     <swiper-item>
-      <image src="{{ item.imageSrc }}"></image>
+      <image  src="{{ item.imageSrc }}" style="width:100%; height:100%; object-fit:cover;"></image>
     </swiper-item>
   </block>
 </swiper>
+
+<!--分类-->
+<van-grid clickable="true">
+  <van-grid-item icon="/assets/shucai.png" text="新鲜蔬菜" data-name="1" bindtap="onClickCategory" />
+  <van-grid-item icon="/assets/rou.png" text="肉蛋水产" data-name="3" bindtap="onClickCategory" />
+  <van-grid-item icon="/assets/yinliao.png" text="乳饮酒水" data-name="4" bindtap="onClickCategory" />
+  <van-grid-item icon="/assets/quanbufenlei.png" text="全部分类" data-name="0" bindtap="onClickCategory" />
+</van-grid>
+
+<view class="discount">
+  <view class="discount-left">
+    <text class="left-top">秒杀特卖</text>
+    <view>
+      <van-count-down time="{{ time }}" />
+    </view>
+    <van-icon name="/assets/qianggou.png" size="30px" />
+  </view>
+  <view class="discount-right">
+    <view class="right-l">
+      <image class="discountimage" src="cloud://shequtuangou-3gbr2gmy99c18698.7368-shequtuangou-3gbr2gmy99c18698-1305405939/goodspic/apple.jpg"></image>
+      <text class="discountimagePrice-l">¥9.9</text> 
+    </view>
+    <view class="right-m">
+      <image class="discountimage" src="cloud://shequtuangou-3gbr2gmy99c18698.7368-shequtuangou-3gbr2gmy99c18698-1305405939/goodspic/mengniumilk.jpg"></image>
+      <text class="discountimagePrice-m">¥9.9</text> 
+    </view>
+    <view class="right-r">
+      <image class="discountimage" src="cloud://shequtuangou-3gbr2gmy99c18698.7368-shequtuangou-3gbr2gmy99c18698-1305405939/goodspic/pear.jpg"></image>
+      <text class="discountimagePrice-r">¥10.9</text>
+    </view>
+  </view>
+
+
+</view>
+
+
 
 <!-- 列表 -->
 <block wx:for='{{ goods }}' wx:key='_id'>
   <navigator hover-class='hcls' class='goods' url="/pages/detail/detail?id={{item._id}}">
     <view class="goods-l">
+      <!--懒加载-->
       <image mode="aspectFill" lazy-load src="{{ item.imageSrc }}"></image>
     </view>
     <view class="goods-r">
@@ -17,14 +63,16 @@
         <view>{{ item.title }}</view>
         <view class="price">¥ {{ item.price }}</view>
       </view>
-      <view class="goods-r-m">计划天数: {{ item.count }}</view>
+      <view class="goods-r-m">已售: {{ item.sold }}</view>
       <view class="goods-r-b">
         <view>
-          <block wx:for='{{ item.tags }}' wx:key='*this' wx:for-item='it'>
+          <block wx:for='{{ item.desc }}' wx:key='*this' wx:for-item='it'>
             <text>{{ it }}</text>
           </block>
         </view>
-        <view catchtap="addCart" data-item='{{ item }}' class="order">下单</view>
+        <view catchtap="addCart" data-item='{{ item }}' class="order">
+          <van-icon name="add-o" />加购
+        </view>
       </view>
     </view>
   </navigator>

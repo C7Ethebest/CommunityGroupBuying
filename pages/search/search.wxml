@@ -1,0 +1,40 @@
+<view>
+  <!--搜索栏-->
+  <van-search value="{{ keyword }}" shape="round" use-action-slot placeholder="请输入搜索关键词" bind:search="onSearch" bind:change="onSearchChange">
+    <view slot="action" bind:tap="onSearch">搜索<slot></slot>
+    </view>
+  </van-search>
+</view>
+
+<van-tabs bind:change="onTabChange" active="a">
+  <van-tab title="综合" name="a"></van-tab>
+  <van-tab title="销量" name="b"></van-tab>
+  <van-tab title="价格" name="c"></van-tab>
+</van-tabs>
+
+
+<block wx:for='{{ goods }}' wx:key='_id'>
+  <navigator hover-class='hcls' class='goods' url="/pages/detail/detail?id={{item._id}}">
+    <view class="goods-l">
+      <!--懒加载-->
+      <image mode="aspectFill" lazy-load src="{{ item.imageSrc }}"></image>
+    </view>
+    <view class="goods-r">
+      <view class="goods-r-t">
+        <view>{{ item.title }}</view>
+        <view class="price">¥ {{ item.price }}</view>
+      </view>
+      <view class="goods-r-m">已售: {{ item.sold }}</view>
+      <view class="goods-r-b">
+        <view>
+          <block wx:for='{{ item.desc }}' wx:key='*this' wx:for-item='it'>
+            <text>{{ it }}</text>
+          </block>
+        </view>
+        <view catchtap="addCart" data-item='{{ item }}' class="order">
+          <van-icon name="add-o" />加购
+        </view>
+      </view>
+    </view>
+  </navigator>
+</block>

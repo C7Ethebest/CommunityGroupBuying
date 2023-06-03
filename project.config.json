@@ -39,11 +39,12 @@
     "showES6CompileOption": false,
     "disableUseStrict": false,
     "useCompilerPlugins": false,
-    "minifyWXML": true
+    "minifyWXML": true,
+    "condition": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.10.3",
-  "appid": "wxb83036166456b34c",
+  "appid": "wx9fb4bbf7a16d75b5",
   "projectname": "HMYG",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
@@ -68,5 +69,6 @@
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
 }

@@ -1,10 +1,106 @@
-swiper {
+.swiperImage{
   width: 750rpx;
-  height: 340rpx;
+  height: 250rpx;
 }
+
 swiper image{
-  width: 750rpx;
-  height: 340rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.van-grid-item{
+  height: 60px;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.discount{
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+
+.discount-left{
+  height: 100%;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left-top{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.discount-right{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 5px;
+}
+
+.right-l{
+  height: 100%;
+  width: 33%;
+}
+
+.right-m{
+  margin-left: 10px;
+  height: 100%;
+  width: 33%;
+}
+
+.right-r{
+  margin-left: 10px;
+  height: 100%;
+  width: 33%;
+}
+
+.discountimage{
+  height: 100%;
+  width: 100%;
+}
+
+.discountimagePrice-l{
+  position: absolute;
+  bottom: 0;
+  left: 7%;
+  transform: translateX(-10%);
+  font-size: 14px;
+  color: red;
+  font-weight: 700;
+  background-color: rgba(170, 170, 170, 0.199);
+  padding: 2px 8px;
+  text-shadow: 0 0 1px #000;
+}
+
+.discountimagePrice-m{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: red;
+  font-weight: 700;
+  background-color: rgba(170, 170, 170, 0.199);
+  padding: 2px 8px;
+  text-shadow: 0 0 1px #000;
+}
+
+.discountimagePrice-r{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateX(-10%);
+  color: red;
+  font-weight: 700;
+  font-size: 14px;
+  background-color: rgba(170, 170, 170, 0.199);
+  padding: 2px 8px;
+  text-shadow: 0 0 1px #000;
 }
 
 .goods {
@@ -68,24 +164,14 @@ swiper image{
   align-items: flex-end;
 }
 
-
-
 .goods-r-b text {
-  background: rgba(154, 205, 50, .3);
-  margin-right: 5px;
+  color: rgb(252, 15, 15);
+  font-size: 14px;
 }
-.goods-r-b text:nth-child(2) {
-  background: rgba(69, 243, 121, 0.3);
-  margin-right: 5px;
-}
-.goods-r-b text:nth-child(3) {
-  background: rgba(85, 10, 224, 0.3);
-  margin-right: 5px;
-}
-
 
 .order {
-  background: red;
+  margin-top: 3px;
+  background: rgb(255, 0, 0);
   color: #fff;
   padding: 3px 10px;
   border-radius: 2px;

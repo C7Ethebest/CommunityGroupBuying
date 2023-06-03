@@ -1,25 +1,152 @@
+.good-detail-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
 
-view {
-  height: 80rpx;
+.good-detail-main {
+  width: 100%;
+  flex-grow: 1;
+  /* background-color: pink; */
+  overflow: scroll;
+}
+
+.good-detail-swiper {
+  width: 100%;
+  height: 240px;
+  background-color: rgb(216, 216, 216);
+}
+
+.detail-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-item {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.good-detail-info {
+  width: 100%;
+  height: 93px;
+  display: flex;
+  padding: 10px 10px 0px 10px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.info-left-top {
+  height: 50%;
+  color: red;
+  font-size: 22px;
+  background-color: white;
+}
+
+.info-left-bottom {
+  height: 50%;
   display: flex;
   align-items: center;
-  /* padding-left: 20px; */
 }
 
-image {
+.good-detail-info-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.good-detail-info-right {
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.info-right-top {
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.info-right-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  font-size: 15px;
+}
+
+.info-left-bottom-text {
+  padding-left: 10px;
+  padding-bottom: 15px;
+  font-size: 20px
+}
+
+.good-service {
   width: 100%;
+  height: 25px;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 13px;
+  color: gray;
 }
 
-.order {
-  background: red;
-  color: #fff;
-  width: 35px;
-  padding: 3px 10px;
-  margin-right: 15px;
-  margin-bottom: 15px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  
+.good-service-text {
+  margin-left: 7px;
+
 }
 
+
+.good-detail-desc {
+  max-width: 100%;
+  width: 100%;
+  min-height: 300px;
+  padding: 0px 10px 10px 10px;
+  box-sizing: border-box;
+}
+
+.comment-main{
+  padding: 5px;
+  background-color: #f7f7f7;
+  border-radius: 7px;
+}
+
+.comment-top{
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.comment-top-icon{
+  margin-left: 5px;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.comment-top-right{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,0 +1,93 @@
+<!--标签-->
+<van-tabs bind:change="onChange">
+  <van-tab title="全部"></van-tab>
+  <van-tab title="待付款"></van-tab>
+  <van-tab title="待取货"></van-tab>
+  <van-tab title="待评价"></van-tab>
+  <van-tab title="售后中"></van-tab>
+</van-tabs>
+<!--加载中-->
+<van-loading wx:if="{{false}}" class="container-center" type="spinner"></van-loading>
+<!--暂无数据-->
+<van-empty wx:if="{{false}}" description="暂无订单数据"></van-empty>
+
+<!--订单列表-->
+<scroll-view class="orders">
+  <block wx:for="{{orders}}" wx:key="index">
+    <view class="order">
+      <view class="header">
+        <view>订单时间：{{item.orderTime}}</view>
+        <view>{{item.status}}</view>
+      </view>
+      <view class="product" wx:for="{{item.checkedGoods}}">
+        <view>
+          <image class="image" src="{{item.imageSrc}}"></image>
+        </view>
+        <view class="info">
+          <text class="title">{{item.title}}</text>
+          <text class="desc">{{item.desc}}</text>
+        </view>
+        <view class="status">
+          <text class="package">x{{item.num}}</text>
+          <text wx:if="{{item.status === '已完成'}}"></text>
+        </view>
+      </view>
+
+      <!--待付款栏-->
+      <view class="foot" wx:if="{{item.status == '待付款'}}">
+        <view class="left">
+          待付款：<view class="price">￥{{item.totalPrice}}</view>元
+        </view>
+        <view class="btns">
+          <van-button type="primary" size="small" bind:click="goPay">去支付</van-button>
+        </view>
+      </view>
+
+      <!--待取货栏-->
+      <view class="foot" wx:if="{{item.status === '待取货'}}">
+        <view class="left">
+          合计：<view class="price">￥{{item.totalPrice}}</view>元
+        </view>
+        <view class="btns">
+          <van-button type="primary" size="small" bind:click="confirmReceipt">确认收货</van-button>
+        </view>
+      </view>
+
+      <!--待评价栏-->
+      <view class="foot" wx:if="{{item.status === '待评价'}}">
+        <view class="left">
+          合计：<view class="price">￥{{item.totalPrice}}</view>元
+        </view>
+        <view class="btns">
+          <van-button type="primary" size="small" bind:click="goComment">去评价</van-button>
+        </view>
+      </view>
+
+      <!--售后栏-->
+      <view class="foot" wx:if="{{item.status === '售后中'}}">
+        <view class="left">
+          合计：<view class="price">￥{{item.totalPrice}}</view>元
+        </view>
+        <view class="btns">
+          <van-button type="primary" size="small" bind:click="goAfterSales">查看售后进度</van-button>
+        </view>
+      </view>
+
+      <!--售后栏-->
+      <view class="foot" wx:if="{{item.status === '已完成'}}">
+        <view class="left">
+          合计：<view class="price">￥{{item.totalPrice}}</view>元
+        </view>
+        <view class="btns">
+          <van-button type="danger" size="small" bind:click="deleteOrder">删除订单</van-button>
+          <view style='width: 15px;'> </view>
+          <van-button type="primary" size="small" bind:click="goAfterSales">再来一单</van-button>
+        </view>
+      </view>
+
+
+    </view>
+  </block>
+
+</scroll-view>
+<van-dialog></van-dialog>

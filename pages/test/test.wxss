@@ -1,0 +1,59 @@
+/* 复选框样式 */
+.custom-class {
+  
+  margin-left: 10px;
+}
+
+.cartsbox{
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 5px;
+}
+
+/* 覆盖复选框包装容器样式 */
+.van-checkbox__icon-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 复选框label样式 */
+view.label-class {
+  margin-left: 0;
+}
+
+/* 商品数量 */
+.stepper-slot {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.van-swipe-cell__left,
+.van-swipe-cell__right {
+  display: inline-block;
+  width: 65px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+}
+.delete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+
+/* 商品卡片 */
+view.van-card {
+  width: 280px;
+  padding-left: 0;
+  padding-top: 5px;
+  background-color: #f5f5f5;
+}

@@ -1,0 +1,45 @@
+<view>
+  <!--搜索栏-->
+  <van-search value="{{ value }}" shape="round" use-action-slot placeholder="请输入搜索关键词" bind:search="onSearch" bind:change="onChangeSearch">
+    <view value="{{ value }}" slot="action" bind:tap="onSearch">搜索<slot></slot>
+    </view>
+  </van-search>
+</view>
+
+<view class="category-main">
+  <van-sidebar active-key="{{ activeKey }}" bind:change="onChangeSidebar">
+    <van-sidebar-item title="全部" />
+    <van-sidebar-item title="新鲜蔬菜" />
+    <van-sidebar-item title="时令水果" />
+    <van-sidebar-item title="肉蛋水产" />
+    <van-sidebar-item title="乳饮酒水" />
+    <van-sidebar-item title="冷冻冷藏" />
+    <van-sidebar-item title="粮油调味" />
+    <van-sidebar-item title="休闲食品" />
+  </van-sidebar>
+
+  <scroll-view style="height: 400px;" scroll-y="true">
+    <view class="main-right" wx:for='{{ goodsList }}' wx:key='_id'>
+      <navigator hover-class='hcls' class='goods' url="/pages/detail/detail?id={{item._id}}">
+        <view class="goods-l">
+          <!--懒加载-->
+          <image mode="aspectFill" lazy-load src="{{ item.imageSrc }}"></image>
+        </view>
+        <view class="goods-r">
+          <view class="goods-r-t">
+            <view>{{ item.title }}
+            </view>
+          </view>
+          <view class="goods-r-m">已售: {{ item.sold }}</view>
+          <view class="goods-r-b">
+            <view class="price">¥ {{ item.price }}</view>
+            <view catchtap="addCart" data-item='{{ item }}' class="order">
+              <van-icon name="add-o" />加购
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </scroll-view>
+
+</view>

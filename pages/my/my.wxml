@@ -1,23 +1,30 @@
 <!--pages/my/my.wxml-->
-<view >
+<view>
   <van-image
   class="touxiang"  round
   fit="cover" width="5rem"  height="5rem"
   src="{{userInfo.avatarUrl}}"
   bind:click="login"
   />
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
 </view>
-<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<view>
+</view>
+
+
+<van-grid column-num="5" clickable="true">
+  <van-grid-item icon="credit-pay" text="待付款" url="/pages/allOrders/allOrders?activeIndex=1"/>
+  <van-grid-item icon="bag-o" text="待提货" url="/pages/allOrders/allOrders?activeIndex=2"/>
+  <van-grid-item icon="chat-o" text="待评价" url="/pages/allOrders/allOrders?activeIndex=3"/>
+  <van-grid-item icon="cash-back-record" text="售后退款" url="/pages/allOrders/allOrders?activeIndex=4"/>
+  <van-grid-item icon="completed" text="全部订单" url="/pages/allOrders/allOrders?activeIndex=5" />
+</van-grid>
+
 
 
 <view class="caidan">
-  <van-cell title="我的订单" is-link/>
-  <van-cell title="我的打卡" is-link 
-  link-type="navigateTo"
-  url="/pages/punchin/punchin"/>
-  <van-cell title="我的得分与评价" is-link 
-  link-type="navigateTo"
-  url="/pages/comment/comment"/>
+  <van-cell title="我的自提点" is-link link-type="navigateTo"
+  url="/pages/pickuppoint/pickuppoint"/>
   <van-cell title="退出登陆" is-link bind:click="loginOut"/>
 </view>
 

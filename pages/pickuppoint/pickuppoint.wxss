@@ -1,0 +1,35 @@
+.position{
+  padding: 5px 13px 5px 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main{
+  display: flex;
+  padding: 10px;
+  background-color: #f7f7f7;
+}
+
+.image{
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+
+.main-info{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 7px;
+}
+
+.info-left{
+  width: 160px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-right{
+  display: flex;
+  align-items: center;
+}

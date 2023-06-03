@@ -1,0 +1,46 @@
+.main{
+  width: 100%;
+  height: 508px;
+  position: absolute;
+}
+
+.head{
+  margin-top: 20px;
+}
+
+
+.head-bottom{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.head-bottom-left{
+  width: 90%;
+}
+
+.head-bottom-right{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+view .van-checkbox{
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.foot{
+  background-color: white;
+  padding: 20px 5px 20px 5px;
+  width: 100%;
+  height: 44px;
+  position:absolute;
+  bottom: 0px;
+}
+
+view .van-button{
+  margin-left: 5px;
+  width: 300px;
+}

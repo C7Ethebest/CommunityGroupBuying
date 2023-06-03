@@ -5,8 +5,17 @@
     "pages/orders/orders",
     "pages/detail/detail",
     "pages/my/my",
-    "pages/punchin/punchin",
-    "pages/comment/comment"
+    "pages/comment/comment",
+    "pages/category/category",
+    "pages/pickuppoint/pickuppoint",
+    "pages/test/test",
+    "pages/confirm/confirm",
+    "pages/search/search",
+    "pages/addUserInfo/addUserInfo",
+    "pages/chooseUser/chooseUser",
+    "pages/allOrders/allOrders",
+    "pages/editUserInfo/editUserInfo",
+    "pages/afterSales/afterSales"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,6 +35,12 @@
         "selectedIconPath": "./assets/home-active.png"
       },
       {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "./assets/category.png",
+        "selectedIconPath": "./assets/category-active.png"
+      },
+      {
         "pagePath": "pages/cart/cart",
         "text": "购物车",
         "iconPath": "./assets/cart.png",
@@ -35,16 +50,44 @@
         "pagePath": "pages/my/my",
         "text": "我的",
         "iconPath": "./assets/user.png",
-        "selectedIconPath": "./assets/user.png"
+        "selectedIconPath": "./assets/user-active.png"
       }
     ]
   },
+
   "usingComponents": {
     "van-image": "@vant/weapp/image/index",
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-uploader": "@vant/weapp/uploader/index",
     "van-action-sheet": "@vant/weapp/action-sheet/index",
-    "van-rate": "@vant/weapp/rate/index"
+    "van-rate": "@vant/weapp/rate/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-card": "/miniprogram_npm/@vant/weapp/card/index",
+    "van-submit-bar": "@vant/weapp/submit-bar/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "van-count-down": "@vant/weapp/count-down/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-steps": "@vant/weapp/steps/index"
   }
+
 }

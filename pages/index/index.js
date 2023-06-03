@@ -16,25 +16,47 @@ Page({
 
   data: {
     goods: [], // 商品列表数据
+    carts: [],
     _page: 0,
     hasMore: true, // 是否有更多数据可加载
-    swipers :[]
+    swipers: [],
+    value: [],
+    time: 30 * 60 * 60 * 1000,
   },
 
+  //加载列表数据
   onLoad() {
-    this.setTabBar()
+    this.setTabbar()
     this.loadSwipersData()
     this.loadListData()
   },
 
+  onShow() {
+    this.setTabbar()
+  },
+
+  // 当搜索框内容发生变化时触发
+  onChange(e) {
+    this.setData({
+      value: e.detail,
+    });
+  },
+  //搜索
+  onSearch() {
+    const keyword = this.data.value;
+    wx.navigateTo({
+      url: `/pages/search/search?keyword=${keyword}`, // 将搜索关键词作为参数传递给search页面
+    });
+  },
+
   // 加载轮播图数据
   // 限制  :3个
-  async loadSwipersData(){
-     let res = await goods_col.orderBy('count','desc').limit(3).get() 
-     console.log('轮播图',res)
-     this.setData({
-      swipers : res.data
-     })
+  async loadSwipersData() {
+    let res = await goods_col.orderBy('count', 'desc').limit(5).get()
+    //  console.log('轮播图',res)
+    this.setData({
+      swipers: res.data
+    })
   },
 
   // 加载列表数据
@@ -54,8 +76,6 @@ Page({
 
     // 手动停止下拉刷新
     wx.stopPullDownRefresh()
-    console.log('列表数据', res.data)
-
     this.setData({
       goods: [...goods, ...res.data],
       _page: ++_page, // 1
@@ -68,79 +88,89 @@ Page({
     // 没有更多数据的情况
     if (!this.data.hasMore) {
       await ml_showToast('没有更多数据了')
-      return console.log('没有数据了')
+      return console.log('没有更多数据了');
     }
-    console.log('上拉刷新')
     this.loadListData()
   },
+
   // 下拉刷新
   onPullDownRefresh() {
-    console.log('下拉刷新')
     //1. 重置
     this.setData({
-      goods :[],
-      _page :0,
-      hasMore : true
+      goods: [],
+      _page: 0,
+      hasMore: true,
     })
     //2. 加载最新的数据
     this.loadListData()
   },
 
-  // 加入到购物车
-  async addCart(e){
-    //1. 拿到该商品
-    let { item } = e.currentTarget.dataset
 
-    // 2. 判断该商品在不在购物车里面
-    //  根据 _id 尝试从购物车里面获取数据, 看能不能获取到
-    try{
-      let res = await carts_col.doc(item._id).get()
-        console.log('有值')
-        // 有值, 把购物车里面的该商品 的 num值累加
-      await carts_col.doc(item._id).update({
-        data : {
-          num : db.command.inc(1)
-        }
-      })  
-
-    }catch(err){
-       console.log('没有值')
-
-       //没有值 把该商品添加到购物车里面去
-       await carts_col.add({
-         data : {
-           _id :item._id,
-           imageSrc : item.imageSrc,
-           price :item.price,
-           title :item.title,
-           num : 1,
-           selected : true
-         }
-       })
+  // 获取用户点击事件并获取商品信息将其加入购物车
+  addCart(event) {
+    let goods = event.currentTarget.dataset.item; //获取点击的商品对象
+    // 将商品信息添加到购物车数组中
+    let cartItem = {
+      id: goods._id,
+      title: goods.title,
+      price: goods.price,
+      imageSrc: goods.imageSrc,
+      num: 1,
+      checked: true
+    };
+    // 获取本地存储的购物车数据，若不存在则创建一个空数组
+    let carts = wx.getStorageSync('carts') || [];   
+    // 判断购物车中是否已存在该商品，若存在则通过findIndex方法返回该商品在数组中的索引，否则返回-1
+    let index = carts.findIndex(item => item.id === cartItem.id);   
+    if (index !== -1) {
+      carts[index].num += 1;  // 购物车中存在该商品，数量+1
+    } else {
+      carts.push(cartItem); // 购物车中不存在该商品，则将其添加到购物车数组中
     }
-
-    this.setTabBar()
-    await ml_showToastSuccess('下单成功') 
+    wx.setStorageSync('carts', carts);  // 将更新后的购物车数据保存到本地存储中
+    this.setTabbar()  // 更新购物车图标上的数字，即显示购物车中已添加的商品数量
+    // 弹窗提醒
+    wx.showToast({
+      title: '已加入购物车',
+      icon: 'success',
+      duration: 2000
+    });
   },
 
-  // 修改tabBar 右上角数字
-  async setTabBar(){
+  // 更新 TabBar 上的数字
+  setTabbar() {
+    let carts = wx.getStorageSync('carts') || [];
+    let checkedCount = 0;
+    for (let i = 0; i < carts.length; i++) {
+      if (carts[i].checked) {
+        checkedCount += carts[i].num;
+      }
+    }
+    if (checkedCount.toString() == 0) {
+      wx.setTabBarBadge({
+        index: 2,
+        text: '',
+      });
+    } else{
+      wx.setTabBarBadge({
+        index: 2,
+        text: checkedCount.toString()
+      });
+    }
+  },
 
-    let total = 0
-    let res = await carts_col.get()
 
-    res.data.forEach(v => {
-      total += v.num
-    })
-
-    if(total === 0)  return 
-
-    wx.setTabBarBadge({
-      index: 1,
-      text: total+'',
-    })
+  //点击分类
+  onClickCategory(event) {
+    let categoryName = event.currentTarget.dataset.name
+    console.log('categoryNameindex', categoryName);
+    wx.switchTab({
+      url: '/pages/category/category',
+      success: function () {
+        wx.setStorageSync('activeKey', categoryName);
+      }
+    });
   }
-
 
 
 })

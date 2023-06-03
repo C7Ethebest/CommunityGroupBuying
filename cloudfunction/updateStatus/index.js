@@ -4,7 +4,7 @@ const cloud = require('wx-server-sdk')
 cloud.init()
 
 const db = cloud.database({
-  env: 'prod-hswqx'
+  env: 'shequtuangou-3gbr2gmy99c18698'
 })
 const orders_col = db.collection('orders')
 
@@ -14,12 +14,11 @@ exports.main = async (event, context) => {
   
   // 更新 status
   let res = await orders_col.where({
-    order_number : event.order_number
+    orderId : event.orderId
   }).update({
     data : {
       status : 1
     }
   })
-
   return res
 }

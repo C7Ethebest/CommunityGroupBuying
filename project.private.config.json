@@ -1,5 +1,5 @@
 {
-  "projectname": "SPI",
+  "projectname": "shequtuangou",
   "setting": {
     "compileHotReLoad": true,
     "urlCheck": true
@@ -16,8 +16,9 @@
         },
         {
           "name": "订单",
-          "pathName": "pages/orders/orders",
+          "pathName": "pages/allOrders/allOrders",
           "query": "",
+          "launchMode": "default",
           "scene": null
         },
         {
@@ -44,6 +45,55 @@
         {
           "name": "评论和得分",
           "pathName": "pages/comment/comment",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "分类",
+          "pathName": "pages/category/category",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "确认订单",
+          "pathName": "pages/confirm/confirm",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "搜索",
+          "pathName": "pages/search/search",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "提货人选择",
+          "pathName": "pages/chooseUser/chooseUser",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "添加提货人",
+          "pathName": "pages/addUserInfo/addUserInfo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "商品售后",
+          "pathName": "pages/afterSales/afterSales",
           "query": "",
           "launchMode": "default",
           "scene": null

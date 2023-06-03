@@ -6,11 +6,11 @@ cloud.init()
 const tenpay = require('tenpay');
 //2. 配置
 const config = {
-  appid: 'wx38d8faffac4d34d2',
-  mchid: '1500880121',
-  partnerKey: 'f5c8e398d51c6261da35f2c246505c99',
-  notify_url: 'http://47.112.97.255/orders/notifiy',
-  spbill_create_ip: '127.0.0.1'
+  appid: 'wx38d8faffac4d34d2',  //AppID
+  mchid: '',    //微信商户号
+  partnerKey: '',   //微信支付密钥
+  notify_url: 'https://shequtuangou-3gbr2gmy99c18698-1305405939.ap-shanghai.app.tcloudbase.com/pay',  //支付回调网址
+  spbill_create_ip: '127.0.0.1'   //本机IP地址
 };
 
 // 云函数入口函数
@@ -22,10 +22,10 @@ exports.main = async (event, context) => {
   
   //4. 获取支付参数
   let result = await api.getPayParams({
-    out_trade_no: event.order_number + '',
-    body: '这是一次支付',
-    total_fee: 1,
-    openid: wxContext.OPENID
+    out_trade_no: event.orderId + '',    //商户内部订单号
+    body: '快团方便买',   //商品描述
+    total_fee: totalPrice,     //订单金额，单位为分
+    openid: wxContext.OPENID  //付款用户的openid，在getWXContext中拉取
   });
 
   return result
